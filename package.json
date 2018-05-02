@@ -1,0 +1,8 @@
+{
+  "name": "multiplayer-online-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tkabeee/multiplayer-online-game.git",
+  "author": "tkabeee",
+  "license": "MIT"
+}
