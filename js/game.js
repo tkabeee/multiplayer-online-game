@@ -17,7 +17,9 @@ class GameState {
   create() {
     this.playerMap = {}
     const testKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
-    testKey.onDown.add(this.client.sendTest, this);
+    testKey.onDown.add(() => {
+      this.client.sendTest();
+    }, this);
     const map = this.game.add.tilemap('map');
     map.addTilesetImage('tilesheet', 'tileset'); // tilesheet is the key of the tileset in map's JSON file
     let layer;
@@ -25,7 +27,9 @@ class GameState {
       layer = map.createLayer(i);
     }
     layer.inputEnabled = true; // Allows clicking on the map ; it's enough to do it on the last layer
-    layer.events.onInputUp.add(this.getCoordinates, this);
+    layer.events.onInputUp.add((layer, pointer) => {
+      this.getCoordinates(layer, pointer);
+    }, this);
     this.client.askNewPlayer();
   }
 

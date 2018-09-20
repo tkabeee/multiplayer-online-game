@@ -1,14 +1,16 @@
 class Client {
-  constructor(io) {
-    this.socket = io.connect();
+  constructor(socket) {
+    this.socket = socket;
   }
 
   sendTest() {
     console.log('test sent');
+    console.log(this.socket);
     this.socket.emit('test');
   }
 
   askNewPlayer() {
+    console.log('askNewPlayer');
     this.socket.emit('newplayer');
   }
 
