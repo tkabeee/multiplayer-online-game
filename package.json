@@ -1,8 +1,16 @@
 {
   "name": "multiplayer-online-game",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
+  "script": {
+    "start": "node server.js"
+  },
   "repository": "git@github.com:tkabeee/multiplayer-online-game.git",
   "author": "tkabeee",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.1.0"
+  },
+  "devDependencies": {}
 }
